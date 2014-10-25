@@ -50,11 +50,53 @@ while value >= 0:
 
 
         print "Sup dog. yr name is " + name + " and you are " + years_old + " years old"
-        print "yep, your name is %s you are %s years old." % (age, years_old)
+        print "yep, your name is %s you are %s years old." % (name, years_old)
         index += 1
     all(data)
 
 print bin((abs(19000000000/498)))
+
+
+ #first function in a class refers to itself. "init" is a constructor.
+ # object.variable like nouns also called property
+# function (like verbs) inside a class is called a method
+#classes have access to all the methods inside them. import classes into other docs to use.
+
+
+class Transaction():
+        def __init__(self, amount, payee, memo):
+            self.amount = amount
+            self.payee = payee
+            self.memo = memo
+            #copied into an instance of the object with all the self.'s
+
+class Account():
+        def __init__(self, named, balance):
+            self.named = named
+            self.balance = balance
+            self.transactions = []
+
+        def addTransaction(self, transaction):
+            self.transactions.append(transaction)
+            self.balance += transaction.amount
+
+        def printLedger(self):
+            print("Ledger...")
+            for t in self.transactions:
+                print(t.amount, t.payee, t.memo)
+
+account = Account("checking", 0)
+account.addTransaction(Transaction(3000, "Landlord", "December Rent"))
+account.addTransaction(Transaction(3, "Starbucks", "coffee"))
+account.printLedger()
+
+class Demo():
+    def __init__(self, name):
+        self.name = name
+    def print_name(self):
+        print(self.name)
+print_name(sts)
+
 
 
 
