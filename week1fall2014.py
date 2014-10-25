@@ -48,9 +48,13 @@ while value >= 0:
         name = data[index]["name"]
         years_old = str(data[index]["age"])
 
+
         print "Sup dog. yr name is " + name + " and you are " + years_old + " years old"
         print "yep, your name is %s you are %s years old." % (age, years_old)
         index += 1
+    all(data)
+
+print bin((abs(19000000000/498)))
 
 
 
